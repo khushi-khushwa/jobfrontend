@@ -1,0 +1,1 @@
+export const USER_API_END_POINT ="https://jobbackend-nine.vercel.app/api/v1/user"
