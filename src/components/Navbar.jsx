@@ -99,8 +99,8 @@ const Navbar = () => {
   </ul>
      <div className="flex  flex-col items-center md:hidden mt-8">
       <div>
-    <Link to="/login"><Button variant="outline" className="mx-2">Login</Button></Link>
-    <Link to="/signup"><Button >SignUp</Button></Link>
+    <Link to="/login"><button  className="mx-2 bg-slate-100 h-[40px] w-[80px] border-2  rounded-lg font-semibold">Login</button></Link>
+    <Link to="/signup"><button   className="mx-2 bg-black text-white h-[40px] w-[80px] border-2  rounded-lg font-semibold ">SignUp</button></Link>
     </div>
 </div>
 </>
