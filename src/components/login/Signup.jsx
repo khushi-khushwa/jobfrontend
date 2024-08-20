@@ -73,8 +73,6 @@ const Signup = () => {
       toast.error(error.response.data.message);
       notificationSound.play();
        
-    }finally{
-      dispatch(setLoading(false));
     }
   };
 
