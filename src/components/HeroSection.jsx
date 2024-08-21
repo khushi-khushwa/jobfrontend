@@ -12,8 +12,8 @@ import android from "../assets/images/android.png"
 const HeroSection = () => {
   return (
   
-      <div className='h-[800px] max-[630px]:h-[700px]  flex items-center justify-center mt-0  bg-emerald-600/5 relative'>
-       <div  className='max-[630px]:absolute top-44 max-[420px]:top-36 px-8'>
+      <div className='h-[800px] max-[630px]:h-[700px]  w-full flex items-center justify-center mt-0  bg-emerald-600/5 relative'>
+       <div  className='max-[630px]:absolute top-44 max-[420px]:top-36 px-4'>
               <h1 className='  text-center my-4 font-bold sm:text-5xl max-[630px]:font-bold max-[630px]:my-2 text-3xl'>Join us & <span className='text-green-600 sm:text-5xl max-[630px]:font-bold text-3xl '>Explore</span>  </h1>
              <h1 className='  text-center my-4  sm:font-bold sm:text-5xl text-green-600 max-[630px]:my-2 max-[630px]:font-bold  text-3xl'>Thousands of <span className=' text-black sm:text-5xl max-[630px]:font-bold text-3xl'>Jobs</span>  </h1>
            
@@ -33,7 +33,7 @@ const HeroSection = () => {
           </div>
          
               
-            <div className='bg-white  absolute bottom-32 left-2/4 animate-[bounce_2s_infinite] size-10'> <img className='   m-[0.4rem] w-7 h-7  ' src={snapchat}/></div>
+            <div className='bg-white  absolute bottom-32 left-[58.5rem] animate-[bounce_2s_infinite] size-10'> <img className='   m-[0.4rem] w-7 h-7  ' src={snapchat}/></div>
            
            <div className=' max-[1083px]:hidden  bg-white absolute top-[20rem] left-1/4  size-10'> <img className=' m-[0.4rem] w-7 h-7 ' src={linkdin}/></div>
            
