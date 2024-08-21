@@ -33,7 +33,7 @@ const HeroSection = () => {
           </div>
          
               
-            <div className='bg-white  absolute bottom-32 max-[630px]:bottom-38  max-[419px]:bottom-44 animate-[bounce_2s_infinite] size-10'> <img className='   m-[0.4rem] w-7 h-7  ' src={snapchat}/></div>
+            <div className='bg-white  absolute bottom-32 max-[630px]:bottom-38  max-[420px]:bottom-52 max-[364px]:bottom-56 animate-[bounce_2s_infinite] size-10'> <img className='   m-[0.4rem] w-7 h-7  ' src={snapchat}/></div>
            
            <div className=' max-[1083px]:hidden  bg-white absolute top-[20rem] left-1/4  size-10'> <img className=' m-[0.4rem] w-7 h-7 ' src={linkdin}/></div>
            
