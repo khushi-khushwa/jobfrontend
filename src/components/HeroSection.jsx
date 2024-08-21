@@ -17,7 +17,7 @@ const HeroSection = () => {
               <h1 className='  text-center my-4 font-bold sm:text-5xl max-[630px]:font-bold max-[630px]:my-2 text-3xl'>Join us & <span className='text-green-600 sm:text-5xl max-[630px]:font-bold text-3xl '>Explore</span>  </h1>
              <h1 className='  text-center my-4  sm:font-bold sm:text-5xl text-green-600 max-[630px]:my-2 max-[630px]:font-bold  text-3xl'>Thousands of <span className=' text-black sm:text-5xl max-[630px]:font-bold text-3xl'>Jobs</span>  </h1>
            
-            <p className='text-slate-400 text-lg mx-auto mt-9 max-w-xl text-center'>Find Jobs, Employment & Career Opportunities. Some of the companies we've helped recruit excellent applicants over the years.</p>
+            <p className='max-[630px]:text-sm text-slate-400 text-lg mx-auto mt-9 max-w-xl text-center'>Find Jobs, Employment & Career Opportunities. Some of the companies we've helped recruit excellent applicants over the years.</p>
             
             <div className='relative mt-8'>
             <input type="text" className='outline-none border-none w-full h-10 rounded-2xl pl-5' placeholder='search jobs' />
