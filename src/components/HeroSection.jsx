@@ -12,7 +12,7 @@ import android from "../assets/images/android.png"
 const HeroSection = () => {
   return (
   
-      <div className='h-[800px] flex items-center justify-center bg-emerald-600/5 relative'>
+      <div className='h-[800px] max-[630px]:h-[700px] flex items-center justify-center px-6 bg-emerald-600/5 relative'>
        <div >
               <h1 className='  text-center my-4 font-bold sm:text-5xl max-[630px]:font-bold max-[630px]:my-2 text-3xl'>Join us & <span className='text-green-600 sm:text-5xl max-[630px]:font-bold text-3xl '>Explore</span>  </h1>
              <h1 className='  text-center my-4  sm:font-bold sm:text-5xl text-green-600 max-[630px]:my-2 max-[630px]:font-bold  text-3xl'>Thousands of <span className=' text-black sm:text-5xl max-[630px]:font-bold text-3xl'>Jobs</span>  </h1>
