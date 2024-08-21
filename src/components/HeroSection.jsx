@@ -12,8 +12,8 @@ import android from "../assets/images/android.png"
 const HeroSection = () => {
   return (
   
-      <div className='h-[800px] max-[630px]:h-[700px] flex items-center justify-center px-6 bg-emerald-600/5 relative'>
-       <div >
+      <div className='h-[800px] max-[630px]:h-[700px]  flex items-center justify-center mt-0  bg-emerald-600/5 relative'>
+       <div  className='max-[630px]:absolute top-44 max-[420px]:top-36 px-12'>
               <h1 className='  text-center my-4 font-bold sm:text-5xl max-[630px]:font-bold max-[630px]:my-2 text-3xl'>Join us & <span className='text-green-600 sm:text-5xl max-[630px]:font-bold text-3xl '>Explore</span>  </h1>
              <h1 className='  text-center my-4  sm:font-bold sm:text-5xl text-green-600 max-[630px]:my-2 max-[630px]:font-bold  text-3xl'>Thousands of <span className=' text-black sm:text-5xl max-[630px]:font-bold text-3xl'>Jobs</span>  </h1>
            
@@ -28,7 +28,7 @@ const HeroSection = () => {
             
            </div> 
 
-        <div className='bg-white  animate-[bounce_2s_infinite] size-10 absolute top-32   '>
+        <div className='bg-white  animate-[bounce_2s_infinite] size-10 absolute top-32  max-[630px]:top-20'>
           <img className='  w-6 h-76 m-2' src={facebook}/>
           </div>
          
