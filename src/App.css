@@ -1,1 +1,23 @@
 
+.slider-container {
+  width: 80%;
+  margin: auto;
+  padding: 40px 0px;
+
+
+}
+
+.slick-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+}
+
+.slick-slide {
+  padding: 0 10px; /* Add padding on left and right */
+}
+
+.slick-list {
+  margin: 0 -10px; /* Adjust the negative margin to compensate for the padding */
+}

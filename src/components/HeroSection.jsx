@@ -24,8 +24,8 @@ const HeroSection = () => {
             <button className='w-20 h-10 bg-green-600 absolute right-0 rounded-2xl ' >
               <FaSearch className='text-white text-2xl absolute left-7 top-2'/>
             </button>
-            </div>
-            
+            </div> 
+            <p className='text-black text-center mt-3 text-sm'>Popular Searches: <span className='text-zinc-400'>Designer, Developer,Web, IOS ,PHP Seniore Engineer</span></p>
            </div> 
 
         <div className='bg-white  animate-[bounce_2s_infinite] size-10 absolute top-32  max-[630px]:top-20'>
@@ -39,9 +39,9 @@ const HeroSection = () => {
            
            <div className=' max-[1083px]:hidden bg-white absolute  top-[20rem] right-1/4  size-10'><img className='  m-[0.4rem] w-7 h-7 ' src={skyp}/></div>
             
-            <div className=' max-[1907px]:hidden bg-white  absolute top-[32rem] left-[38rem] animate-wiggle size-10'> <img className=' m-[0.4rem] w-7 h-7 ' src={circle}/></div>
+            <div className=' max-[1907px]:hidden bg-white  absolute top-[31rem] left-[38rem] animate-wiggle size-10'> <img className=' m-[0.4rem] w-7 h-7 ' src={circle}/></div>
            
-           <div className='max-[1907px]:hidden bg-white absolute top-[32rem] right-[38rem]  animate-wiggle size-10'><img className='m-[0.4rem] w-7 h-7 ' src={google}/></div>
+           <div className='max-[1907px]:hidden bg-white absolute top-[31rem] right-[38rem]  animate-wiggle size-10'><img className='m-[0.4rem] w-7 h-7 ' src={google}/></div>
             
             {/* <img className='w-7 h-7' src={android}/>
             <img className='w-7 h-7' src={lenovo}/> */}

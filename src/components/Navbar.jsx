@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 import { Avatar,  AvatarImage } from "@/components/ui/avatar"
 import {
     Popover,
@@ -13,7 +13,13 @@ import { RxCross2 } from "react-icons/rx";
 import { FaAlignJustify } from "react-icons/fa";
 const Navbar = () => {
   const [nav , setNav] = useState(false);
-
+  
+ const NavLinkStyles = ( {isActive}) =>{
+  return{
+    fontWeight: isActive ? 'bold' : 'normal',
+    color: isActive ? 'green' : 'black'
+  }
+ }
   const handleMenu =()=>{
     setNav(!nav)
   }
@@ -33,15 +39,15 @@ const Navbar = () => {
           <div className="flex items-center gap-12">
             <ul className=" font-bold gap-5 items-center hidden md:flex">
              
-                                   <li><Link to="/">Home</Link></li>
-                                    <li><Link to="/jobs">Jobs</Link></li>
-                                    <li><Link to="/browse">Browse</Link></li>
+                                   <li><NavLink style={NavLinkStyles} to="/">Home</NavLink></li>
+                                    <li><NavLink style={NavLinkStyles} to="/jobs">Jobs</NavLink></li>
+                                    <li><NavLink style={NavLinkStyles} to="/browse">Browse</NavLink></li>
             </ul>
             {
                 !user ?  (
                     <div className="hidden md:block gap-4">
-                        <Link to="/login"><button  className="mx-2 bg-slate-100 h-[40px] w-[80px] border-2  rounded-lg font-semibold">Login</button></Link>
-                        <Link to="/signup"><button   className="mx-2 bg-black text-white h-[40px] w-[80px] border-2  rounded-lg font-semibold ">SignUp</button></Link>
+                        <Link to="/login"><button  className="mx-2 bg-slate-100 h-[40px] w-[80px] border-none  rounded-lg font-semibold">Login</button></Link>
+                        <Link to="/signup"><button   className="mx-2 bg-green-600 text-white h-[40px] w-[80px] border-none  rounded-lg font-semibold ">SignUp</button></Link>
                     </div>
               
                 ):(
@@ -93,14 +99,14 @@ const Navbar = () => {
     <>
    
                           <ul className=' flex  flex-col items-center md:hidden gap-3 '>
-                           <li><Link to="/">Home</Link></li>
-                                    <li><Link to="/jobs">Jobs</Link></li>
-                                    <li><Link to="/browse">Browse</Link></li>
+                          <li><NavLink style={NavLinkStyles} to="/">Home</NavLink></li>
+                                    <li><NavLink style={NavLinkStyles} to="/jobs">Jobs</NavLink></li>
+                                    <li><NavLink style={NavLinkStyles} to="/browse">Browse</NavLink></li>
   </ul>
      <div className="flex  flex-col items-center md:hidden mt-8">
       <div>
     <Link to="/login"><button  className="mx-2 bg-slate-100 h-[40px] w-[80px] border-2  rounded-lg font-semibold">Login</button></Link>
-    <Link to="/signup"><button   className="mx-2 bg-black text-white h-[40px] w-[80px] border-2  rounded-lg font-semibold ">SignUp</button></Link>
+    <Link to="/signup"><button   className="mx-2 bg-green-600 text-white h-[40px] w-[80px] border-2  rounded-lg font-semibold ">SignUp</button></Link>
     </div>
 </div>
 </>
