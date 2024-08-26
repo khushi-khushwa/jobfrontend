@@ -27,7 +27,7 @@ const Navbar = () => {
     const user = false;
   return (
     <>
-      <div className="bg-white ">
+      <div className="bg-white w-full ">
         <nav>
         <div className="flex items-center justify-between mx-auto max-w-7xl h-16 max-[1340px]:px-12">
           <div>

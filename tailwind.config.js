@@ -3,13 +3,10 @@ export default {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
 
-   
+
     extend: {
-      screens:{
-       'xs': '480px',
-       'tab':"1225px"  ,
-         'md': '815px',
-      },
+   
+      
      animation : {
       
       wiggle: 'wiggle 1s ease-in-out infinite',
