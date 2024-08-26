@@ -23,13 +23,13 @@ const Contactmore = () => {
             </h1>
 
             <div className=" md:w-[20rem]  lg:w-[35rem] mt-4">
-              <p className="text-slate-500  text-sm md:text-[0.9rem]">
+              <p className="text-slate-500  text-sm md:text-[0.9rem] lg:text-[1rem]">
                 Search all the open positions on the web. Get your own
                 personalized salary estimate. Read reviews on over 30000+
                 companies worldwide.
               </p>
             </div>
-            <div className="mt-4 text-sm md:text-lg md:text-[0.8rem]">
+            <div className="mt-4 text-sm md:text-lg md:text-[0.8rem] lg:text-[1rem]">
             <p>Digital Marketing Solutions for Tomorrow.</p>
             <p>Our Talented & Experienced Marketing Agency.</p>
             <p>Create your own skin to match your brand.</p>
