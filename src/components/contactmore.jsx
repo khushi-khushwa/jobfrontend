@@ -17,22 +17,22 @@ const Contactmore = () => {
         </div>
         <div className=" relative md:ml-1 lg:ml-10 flex justify-center items-center sm:px-6 md:px-2 lg:px-5 ">
           <div className="px-6 sm:px-0 ">
-            <h1 className="font-semibold  lg:text-3xl md:text-2xl text-3xl">Millions of jobs.</h1>
-            <h1 className="font-semibold lg:text-3xl md:text-2xl text-3xl">
+            <h1 className="font-semibold  lg:text-3xl md:text-2xl  sm:text-2xl text-lg">Millions of jobs.  <span className="md:hidden sm:block">Find the one that's right for you</span></h1>
+            <h1 className="font-semibold lg:text-3xl md:text-2xl  sm:text-2xl text-lg hidden md:block">
               Find the one that's right for you
             </h1>
 
-            <div className=" md:w-[20rem] lg:w-[35rem] mt-4">
-              <p className="text-slate-500 ">
+            <div className=" md:w-[20rem]  lg:w-[35rem] mt-4">
+              <p className="text-slate-500  text-sm md:text-[0.9rem]">
                 Search all the open positions on the web. Get your own
                 personalized salary estimate. Read reviews on over 30000+
                 companies worldwide.
               </p>
             </div>
-            <div className="mt-4">
-            <p>Digital Marketing Solutions for Tomorrow</p>
-            <p>Our Talented & Experienced Marketing Agency</p>
-            <p>Create your own skin to match your brand</p>
+            <div className="mt-4 text-sm md:text-lg md:text-[0.8rem]">
+            <p>Digital Marketing Solutions for Tomorrow.</p>
+            <p>Our Talented & Experienced Marketing Agency.</p>
+            <p>Create your own skin to match your brand.</p>
             </div>
          
             <button className="h-10 w-28 mt-5 bg-green-600 rounded">
