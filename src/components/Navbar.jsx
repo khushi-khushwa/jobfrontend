@@ -11,6 +11,7 @@ import { LogOut, User2 } from "lucide-react";
 import { useState } from 'react'
 import { RxCross2 } from "react-icons/rx";
 import { FaAlignJustify } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 const Navbar = () => {
   const [nav , setNav] = useState(false);
   
@@ -23,8 +24,9 @@ const Navbar = () => {
   const handleMenu =()=>{
     setNav(!nav)
   }
-
-    const user = false;
+   const {user} = useSelector(store=> store.auth);
+   
+    // const user = false;
   return (
     <>
       <div className="bg-white w-full ">

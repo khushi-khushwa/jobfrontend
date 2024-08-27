@@ -13,7 +13,6 @@ const Home = () => {
     <CategoryCarousal/>
      <LatestJob/>
      <Contactmore/>
-     
     <Footer/>
     </div>
   )

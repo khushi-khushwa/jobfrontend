@@ -8,6 +8,9 @@ import { Button } from "../ui/button.jsx";
 import { USER_API_END_POINT } from "@/utils/constant.js"
 import axios from "axios";
 import notificationSoundFile from "../login/notification.mp3"
+import { useDispatch, useSelector } from 'react-redux';
+import { setLoading, setUser } from '../../redux/authslice.js';
+import store from '../../redux/store.js';
 
 
 
@@ -18,8 +21,9 @@ const Login = () => {
     role:""
   })
 
+  const {loading} = useSelector(store =>store.auth)
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   // const handleChange = (e) => {
   //   const { name, value } = e.target;
   //   setInputData((prevData) => ({ ...prevData, [name]: value }));
@@ -37,7 +41,7 @@ const Login = () => {
   const onLogin = async (e) => {
     e.preventDefault();
     try{
-
+      dispatch(setLoading(true))
       const res = await axios.post(`${USER_API_END_POINT}/login`,
         enterData,{
         headers:{
@@ -47,6 +51,7 @@ const Login = () => {
       }
       );
       if(res.data.success){
+        dispatch(setUser(res.data.user))
         navigate("/")
         toast.success(res.data.message)
 
@@ -59,6 +64,8 @@ const Login = () => {
       toast.error(error.response.data.message);
       notificationSound.play();
        
+    } finally {
+      dispatch(setLoading(false))
     }
   };
 
@@ -112,7 +119,11 @@ const Login = () => {
                 </div>
               </div>
    
-            <button type="submit"  className="mt-3  bg-slate-100 h-[40px] w-[80px] border-2  rounded-lg font-semibold">Login</button> 
+  {
+    loading ? <button className='mr-2 h-[40px] w-[7rem] bg-emerald-500   border-none rounded-lg font-semibold text-white'>please wait...</button>
+    :  <button type="submit"  className="mt-3  bg-emerald-500 h-[40px] w-[80px] border-none rounded-lg font-semibold text-white">Login</button> 
+  }
+ 
           
           
           <p className="text-sm mt-3 ">Create account? <Link to="/signup" className="text-blue-400">Sign Up</Link> </p>

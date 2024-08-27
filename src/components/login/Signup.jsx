@@ -8,6 +8,7 @@ import { Button } from "../ui/button.jsx";
 import { USER_API_END_POINT } from "@/utils/constant.js"
 import axios from "axios";
 import notificationSoundFile from "../login/notification.mp3"
+import { useDispatch, useSelector } from "react-redux";
 
 
 const Signup = () => {
@@ -23,7 +24,9 @@ const Signup = () => {
 
   const notificationSound = new Audio(notificationSoundFile);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const {loading} = useSelector(store=> store.auth)
   const changeEventHandler = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
@@ -52,6 +55,7 @@ const Signup = () => {
     formData.append("file", inputData.file)
     }
     try{
+      dispatch(setLoading(true))
       const res = await axios.post(`${USER_API_END_POINT}/register`,
         formData,{
         headers:{
@@ -73,6 +77,9 @@ const Signup = () => {
       toast.error(error.response.data.message);
       notificationSound.play();
        
+    }
+    finally{
+      dispatch(setLoading(false));
     }
   };
 
@@ -163,13 +170,19 @@ const Signup = () => {
                 />
               </div>
             </div>
-            <button
-              type="submit"
-              className=" mt-5 text-white  bg-black h-[40px] w-[80px] border-2  rounded-lg font-semibold"
-              onSubmit={submitHandler}
-            >
-              Sigup
-            </button>
+             
+  {
+    loading ? <button className='mr-2 h-[40px] w-[7rem] bg-emerald-500   border-none rounded-lg font-semibold text-white '>please wait...</button>
+    :   <button
+    type="submit"
+    className=" mt-5 text-white  bg-emerald-500 h-[40px] w-[80px] border-none  rounded-lg font-semibold "
+    onSubmit={submitHandler}
+  >
+    Sigup
+  </button> 
+  }
+ 
+           
             <p className="text-sm mt-3">
               Already have an account?{" "}
               <Link to="/login" className="text-blue-400">
