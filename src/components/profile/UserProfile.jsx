@@ -43,7 +43,7 @@ const UserProfile = () => {
                 <p>3485949964</p>
               </div>
               <div className="mt-3">
-                <Link>Portfolio</Link>
+                <Link>Resume</Link>
               </div>
             </div>
           </div>

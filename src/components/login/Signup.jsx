@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar.jsx";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 import { Link,  useNavigate } from "react-router-dom";
 import { toast } from 'sonner'
-import { Button } from "../ui/button.jsx";
-import { USER_API_END_POINT } from "@/utils/constant.js"
+import { Button } from "../ui/button";
+import { USER_API_END_POINT } from "../../utils/constant.js"
 import axios from "axios";
 import notificationSoundFile from "../login/notification.mp3"
 import { useDispatch, useSelector } from "react-redux";
