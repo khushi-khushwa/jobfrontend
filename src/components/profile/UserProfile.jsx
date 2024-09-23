@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "../ui/avatar";
 import Navbar from "../Navbar";
 import { MdEmail } from "react-icons/md";
 import { IoCallOutline } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { TbEdit } from "react-icons/tb";
-import { Button } from "@/components/ui/button";
+
 
 import JobSeeker from "./JobSeeker";
 import Edit from "./Edit";

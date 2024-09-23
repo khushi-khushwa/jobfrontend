@@ -9,7 +9,7 @@ import Browser from "./components/job/Browser";
 
 import UserProfile from "./components/profile/UserProfile";
 import JobDescription from "./components/job/JobDescription";
-import Edit from "./components/profile/Edit";
+
 function App() {
   const appRouter = createBrowserRouter([
     {
