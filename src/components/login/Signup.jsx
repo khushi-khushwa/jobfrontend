@@ -3,12 +3,13 @@ import Navbar from "../Navbar.jsx";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Link,  useNavigate } from "react-router-dom";
-import { toast } from 'sonner'
+import { toast,Toaster } from 'sonner'
 import { Button } from "../ui/button";
 import { USER_API_END_POINT } from "../../utils/constant.js"
 import axios from "axios";
 import notificationSoundFile from "../login/notification.mp3"
 import { useDispatch, useSelector } from "react-redux";
+import {setLoading,setUser} from "../../redux/authslice.js"
 
 
 const Signup = () => {
@@ -20,13 +21,14 @@ const Signup = () => {
     role: "",
     file: "",
   });
-  
 
   const notificationSound = new Audio(notificationSoundFile);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const {setLoading} = useSelector(store=> store.auth)
+  const me = useSelector((state) => state.auth);
+  console.log(me)
+  const {loading } = useSelector((state) => state.auth);
   const changeEventHandler = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   };
@@ -42,29 +44,16 @@ const Signup = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    // Object.keys(inputData).forEach((key) => {
-    //   formData.append(key, inputData[key]);
-    // });
-    formData.append("fullname", inputData.fullname);
-    formData.append("email", inputData.email)
-    formData.append("phoneNumber", inputData.phoneNumber)
-    formData.append("password", inputData.password);
-    formData.append("role", inputData.role)
-    if(inputData.file){
-    formData.append("file", inputData.file)
+    if (!inputData.file) {
+      alert("profile Photo is required")
+     return 
     }
     try{
       dispatch(setLoading(true))
-      const res = await axios.post(`${USER_API_END_POINT}/register`,
-        formData,{
-        headers:{
-          "content-type": "multipart/form-data"
-        },
-        withcredentials:true
-      }
-      );
-      if(res.data.success){
+      const res = await axios.post(`${USER_API_END_POINT}/register`,inputData);
+      console.log(res)
+      if (res.data.success) {
+        dispatch(setUser(inputData))
         navigate("/login")
         toast.success(res.data.message)
 
@@ -85,6 +74,7 @@ const Signup = () => {
 
   return (
     <>
+      <Toaster/>
       <div>
         <Navbar />
       </div>
