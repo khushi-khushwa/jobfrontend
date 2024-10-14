@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
   Popover,
@@ -12,8 +12,11 @@ import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { FaAlignJustify } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { logoutApi } from "../redux/authslice";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const NavLinkStyles = ({ isActive }) => {
     return {
@@ -25,6 +28,15 @@ const Navbar = () => {
     setNav(!nav);
   };
   const { user } = useSelector((store) => store.auth);
+
+
+  const handleLogOut = () => {
+    dispatch(logoutApi());
+    navigate("/");
+    window.location.reload()
+  }
+
+
 
   // const user = false;
   return (
@@ -88,7 +100,7 @@ const Navbar = () => {
                         />
                       </Avatar>
                       <div>
-                        <h1 className="font-bold text-xl">khushi</h1>
+                        <h1 className="font-bold text-xl">{user.fullname}</h1>
                         <p className="text-sm text-muted-foreground">
                           Hi, welcome to job portal
                         </p>
@@ -103,7 +115,10 @@ const Navbar = () => {
                         </Button>
                       </div>
 
-                      <div className="flex items-center">
+                      <div
+                        className="flex items-center"
+                        onClick={handleLogOut}
+                      >
                         <LogOut></LogOut>
                         <Button variant="link">Logout</Button>
                       </div>

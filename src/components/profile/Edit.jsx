@@ -41,7 +41,6 @@ const Edit = ({ open, setOpen }) => {
 
   
   const submitHandler = async (e) => {
-    console.log("click");
     e.preventDefault();
     setLoading(true);
     const formData = new FormData();
@@ -57,22 +56,22 @@ const Edit = ({ open, setOpen }) => {
     try {
       const res = await axios.post(
         `${USER_API_END_POINT}/profile/update`,
-        formData,
+        input,
         {
           headers: {
             "Content-Type": "multipart/form-data",
           },
           withCredentials: true,
-   
         }
       );
-      if (res.data.success) {
+      console.log(res)
+      // ?--> is optional chaning
+      if (res?.data?.success) {
         dispatch(setUser(res.data.user));
         toast.success(res.data.message);
        
-      // } else{
-      //   console.error("unexpected responses");
-      //   toast.error("unexpected error while updating profile.")
+      } else{
+         throw new Error(res?.data?.error)
        }
     } catch (error) {
        console.error(error);
